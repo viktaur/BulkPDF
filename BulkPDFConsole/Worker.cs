@@ -64,7 +64,7 @@ namespace BulkPDFConsole
                 //// Other
                 Console.WriteLine("Load general options");
                 bool finalize = Convert.ToBoolean(xmlOptions.Element("Finalize").Value);
-                bool unicode = false;
+                bool unicode = true; // default was 'false';
                 try
                 {
                     unicode = Convert.ToBoolean(xmlOptions.Element("Unicode").Value);

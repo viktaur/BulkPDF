@@ -18,7 +18,7 @@ namespace BulkPDF
         private Dictionary<string, PDFField> pdfFields = new Dictionary<string, PDFField>();
         private ProgressForm progressForm;
         private int tempSelectedIndex;
-        private bool unicode = false;
+        private bool unicode = true; // default was 'false';
 
         public MainForm()
         {

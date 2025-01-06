@@ -148,6 +148,8 @@ namespace BulkPDF
                         if (field.MakeReadOnly && isDynamicXFA)
                         {
                             string name = Regex.Match(field.Name, @"([A-Za-z0-9]+)(\[[0-9]+\]|)$").Groups[1].Value;
+                            // Match any alphabetical or numerical character in any language.
+                            // string name = Regex.Match(field.Name, @"([\p{L}\p{N}]+)(\[[0-9]+\]|)$").Groups[1].Value;
                             for (int i = 0; i < pdfStamper.AcroFields.Xfa.DomDocument.SelectNodes("//*[@name='" + name + "']").Count; i++)
                             {
                                 var attr = pdfStamper.AcroFields.Xfa.DomDocument.CreateAttribute("access");
